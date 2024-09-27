@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: flex-start; 
+    margin-left: 40%;
+}
+
+.checkbox-container {
+    margin-bottom: 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    transform: scale(1.5); 
+}
+
+label {
+    margin-left: 1.5rem; 
+    font-size: 2rem;
+}
+
+
