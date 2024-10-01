@@ -1,22 +1,14 @@
 # Fast Cheap Good - Checkbox Toggle
 
-This project implements a simple feature where only two checkboxes can be selected at the same time. If a third checkbox is selected, the previously checked checkbox (the second one) will automatically be unchecked, ensuring that only two checkboxes are ever selected at once.
+This script limits the number of checkboxes that can be selected at any given time in a web form. If more than two checkboxes are selected, the earliest selected checkbox will be automatically unchecked, ensuring that only two checkboxes remain checked.
 
 ## Features
-
-- **Track Last Two Checked**: The system keeps track of the last two checkboxes that were checked.
-- **Automatic Unchecking**: When a third checkbox is checked, the second previously checked one will be automatically unchecked.
-- **User Flexibility**: Users can continue toggling between checkboxes, and the system will ensure the two-checkbox limit is maintained, allowing them to recheck options.
+- **Limits checkbox selection**: Ensures that only two checkboxes can be checked at a time.
+- **Automatic uncheck**: When a third checkbox is selected, the earliest selected checkbox will be automatically unchecked.
 
 ## How It Works
-
-1. **State Tracking**:
-   - `lastChecked`: Keeps track of the most recently checked checkbox.
-   - `secondLastChecked`: Keeps track of the checkbox that was checked before the `lastChecked`.
-
-2. **Event Listeners**:
-   - Each checkbox has an event listener to detect when it is checked or unchecked.
-   - When a checkbox is checked, the `lastChecked` is updated, and the previously checked checkbox moves to `secondLastChecked`.
-
-3. **Limiting Checked Checkboxes**:
-   - If more than two checkboxes are checked at once, the system will uncheck the checkbox stored in `secondLastChecked`.
+- The script uses `document.querySelectorAll()` to select all input elements of type `checkbox`.
+- It listens for the `change` event on each checkbox using `addEventListener()`.
+- Every time a checkbox is checked or unchecked, the `handleCheckboxChange` function is executed.
+- The function tracks the last checked checkbox using the `lastChecked` variable.
+- If more than two checkboxes are selected, the script unchecks the first checkbox that was selected, maintaining the limit of two checkboxes.
